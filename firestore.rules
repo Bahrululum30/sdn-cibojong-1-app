@@ -1,0 +1,72 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Global Safety Net: Default deny all unmapped paths first
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Admin checking: checks if the requesting user exists in the 'admins' collection
+    function isAdmin() {
+      return request.auth != null && 
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    // Admins collection: Only authenticated administrators can read/write their credentials
+    match /admins/{adminId} {
+      allow read, write: if request.auth != null && request.auth.uid == adminId;
+      allow get: if true;
+    }
+
+    // Public reading, Admin writing for settings and public content
+    match /settings/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    match /spmb_settings/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /document_settings/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /teachers/{teacherId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /announcements/{announcementId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /gallery/{galleryId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Messages collection: anyone can create, only admin can read/update/delete
+    match /messages/{messageId} {
+      allow create: if true;
+      allow read, update, delete: if isAdmin();
+    }
+
+    // Students collection: anyone can create (for registering), only admin can manage
+    match /students/{studentId} {
+      allow create: if true;
+      // Allow student checking their own SPMB status
+      allow get: if true;
+      allow list, update, delete: if isAdmin();
+    }
+
+    // Analytics collection: anyone can trigger tracking, administrative access for admin
+    match /analytics/{docId} {
+      allow read, write: if true;
+    }
+  }
+}

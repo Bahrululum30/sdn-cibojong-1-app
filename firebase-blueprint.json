@@ -1,0 +1,247 @@
+{
+  "entities": {
+    "settings": {
+      "title": "School Profile",
+      "description": "Information and configuration settings of the school, including registration flags.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "school_name": { "type": "string" },
+        "npsn": { "type": "string" },
+        "address": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "vision": { "type": "string" },
+        "mission": { "type": "string" },
+        "principal_name": { "type": "string" },
+        "cover_image": { "type": "string" },
+        "logo_image": { "type": "string" },
+        "coverTitle": { "type": "string" },
+        "coverSubtitle": { "type": "string" },
+        "profileCoverUrl": { "type": "string" },
+        "isRegistrationClosed": { "type": "boolean" },
+        "updated_at": { "type": "string", "format": "date-time" }
+      },
+      "required": ["school_name"]
+    },
+    "document_settings": {
+      "title": "Document Settings",
+      "description": "Document signing and committee settings for PMB official reports.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "committee_name": { "type": "string" },
+        "committee_position": { "type": "string" },
+        "committee_nip": { "type": "string" },
+        "committee_signature": { "type": "string" },
+        "committee_stamp": { "type": "string" },
+        "updated_at": { "type": "string", "format": "date-time" }
+      },
+      "required": ["committee_name"]
+    },
+    "teachers": {
+      "title": "Teachers",
+      "description": "Records of teachers and school staff members.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "position": { "type": "string" },
+        "photo": { "type": "string" },
+        "description": { "type": "string" },
+        "active": { "type": "boolean" },
+        "created_at": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "position"]
+    },
+    "announcements": {
+      "title": "Announcements",
+      "description": "Announcements published on the portal.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "date": { "type": "string" },
+        "category": { "type": "string", "enum": ["SPMB", "Akademik", "Kegiatan", "Umum"] },
+        "author": { "type": "string" },
+        "image": { "type": "string" },
+        "created_at": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "content", "date"]
+    },
+    "gallery": {
+      "title": "Gallery",
+      "description": "Photos representing facilities, activities, and achievements.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "image_url": { "type": "string" },
+        "category": { "type": "string", "enum": ["Fasilitas", "Kegiatan", "Prestasi", "Belajar"] },
+        "date": { "type": "string" },
+        "created_at": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "image_url", "date"]
+    },
+    "messages": {
+      "title": "Messages",
+      "description": "Contact messages submitted by visitors.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "subject": { "type": "string" },
+        "message": { "type": "string" },
+        "date": { "type": "string" },
+        "is_read": { "type": "boolean" },
+        "created_at": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "email", "subject", "message"]
+    },
+    "students": {
+      "title": "Students",
+      "description": "Candidate student registration documents, containing identity details, parents, and attachments.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "registration_number": { "type": "string" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "status": { "type": "string", "enum": ["PENDING", "VERIFIED", "REJECTED"] },
+        "verification_status": { "type": "string" },
+        "verification_comment": { "type": "string" },
+        "fullName": { "type": "string" },
+        "gender": { "type": "string" },
+        "nisn": { "type": "string" },
+        "birthPlace": { "type": "string" },
+        "birthDate": { "type": "string" },
+        "nik": { "type": "string" },
+        "religion": { "type": "string" },
+        "address": { "type": "string" },
+        "rtRw": { "type": "string" },
+        "village": { "type": "string" },
+        "district": { "type": "string" },
+        "postalCode": { "type": "string" },
+        "stayType": { "type": "string" },
+        "transportation": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "previousSchool": { "type": "string" },
+        "childNumber": { "type": "integer" },
+        "birthCertificateNo": { "type": "string" },
+        "familyCardNo": { "type": "string" },
+        "specialNeeds": { "type": "string" },
+        "fatherName": { "type": "string" },
+        "fatherEducation": { "type": "string" },
+        "fatherOccupation": { "type": "string" },
+        "fatherIncome": { "type": "string" },
+        "fatherNik": { "type": "string" },
+        "fatherReligion": { "type": "string" },
+        "fatherBirthPlace": { "type": "string" },
+        "fatherBirthDate": { "type": "string" },
+        "motherName": { "type": "string" },
+        "motherEducation": { "type": "string" },
+        "motherOccupation": { "type": "string" },
+        "motherIncome": { "type": "string" },
+        "motherNik": { "type": "string" },
+        "motherReligion": { "type": "string" },
+        "motherBirthPlace": { "type": "string" },
+        "motherBirthDate": { "type": "string" },
+        "noGuardian": { "type": "boolean" },
+        "guardianName": { "type": "string" },
+        "guardianEducation": { "type": "string" },
+        "guardianOccupation": { "type": "string" },
+        "guardianIncome": { "type": "string" },
+        "guardianNik": { "type": "string" },
+        "guardianBirthPlace": { "type": "string" },
+        "guardianBirthDate": { "type": "string" },
+        "whatsappNumber": { "type": "string" },
+        "birthCertificateUrl": { "type": "string" },
+        "familyCardUrl": { "type": "string" },
+        "photoUrl": { "type": "string" },
+        "kipKpsUrl": { "type": "string" },
+        "weight": { "type": "integer" },
+        "height": { "type": "integer" },
+        "headCircumference": { "type": "integer" },
+        "siblingCount": { "type": "integer" },
+        "homeDistance": { "type": "number" }
+      },
+      "required": ["registration_number", "fullName"]
+    },
+    "users": {
+      "title": "Admin Users",
+      "description": "Registered administrative or moderator users for SDN Cibojong 1 control panel.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "fullname": { "type": "string" },
+        "username": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "password_hash": { "type": "string" },
+        "role": { "type": "string", "enum": ["Superadmin", "Admin"] },
+        "status": { "type": "string", "enum": ["Pending", "Aktif", "Ditolak", "Nonaktif"] },
+        "verification_token": { "type": "string" },
+        "email_verified": { "type": "boolean" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": "string", "format": "date-time" }
+      },
+      "required": ["fullname", "username", "email", "password_hash"]
+    },
+    "login_logs": {
+      "title": "Login Activity Logs",
+      "description": "Security logs capturing administrator portal entry activity.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "username": { "type": "string" },
+        "email": { "type": "string" },
+        "ip_address": { "type": "string" },
+        "device": { "type": "string" },
+        "browser": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["username", "email", "timestamp"]
+    }
+  },
+  "firestore": {
+    "settings": {
+      "schema": { "$ref": "settings" },
+      "description": "School settings schema and meta information."
+    },
+    "document_settings": {
+      "schema": { "$ref": "document_settings" },
+      "description": "Document signing and committee database mapping."
+    },
+    "teachers": {
+      "schema": { "$ref": "teachers" },
+      "description": "School teachers collection."
+    },
+    "announcements": {
+      "schema": { "$ref": "announcements" },
+      "description": "System announcements collection."
+    },
+    "gallery": {
+      "schema": { "$ref": "gallery" },
+      "description": "Visual highlights of school features and activities."
+    },
+    "messages": {
+      "schema": { "$ref": "messages" },
+      "description": "Messages from contact us form."
+    },
+    "students": {
+      "schema": { "$ref": "students" },
+      "description": "Registered students for the SPMB system."
+    },
+    "users": {
+      "schema": { "$ref": "users" },
+      "description": "Admin Users credentials database."
+    },
+    "login_logs": {
+      "schema": { "$ref": "login_logs" },
+      "description": "Login audit trails logging."
+    }
+  }
+}

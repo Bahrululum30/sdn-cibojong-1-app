@@ -1,0 +1,6 @@
+{
+  "name": "SDN Cibojong 1 Padarincang",
+  "description": "Website Resmi dan Sistem Penerimaan Mahasiswa Baru (SPMB) Online SDN Cibojong 1 Padarincang Tahun Ajaran 2026/2027.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

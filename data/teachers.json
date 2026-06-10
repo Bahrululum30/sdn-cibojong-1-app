@@ -1,0 +1,93 @@
+[
+  {
+    "id": "t-1",
+    "name": "Nihayatul Faujiah, S.Pd",
+    "role": "Kepala Sekolah",
+    "category": "Staf",
+    "photoUrl": ""
+  },
+  {
+    "id": "t-2",
+    "name": "Bahrul Ulum, S.Kom",
+    "role": "TAS/OPS",
+    "category": "Staf",
+    "photoUrl": ""
+  },
+  {
+    "id": "t-3",
+    "name": "Iroh Rohimah",
+    "role": "Penjaga Sekolah",
+    "category": "Staf",
+    "photoUrl": ""
+  },
+  {
+    "id": "t-4",
+    "name": "Munawati, S.Pd",
+    "role": "Guru Kelas / Wali Kelas",
+    "category": "Guru",
+    "photoUrl": ""
+  },
+  {
+    "id": "t-5",
+    "name": "Adawiyah, S.Pd",
+    "role": "Guru Kelas / Wali Kelas",
+    "category": "Guru",
+    "photoUrl": ""
+  },
+  {
+    "id": "t-6",
+    "name": "Nur Suryaningsih, S.Pd",
+    "role": "Guru Kelas / Wali Kelas",
+    "category": "Guru",
+    "photoUrl": ""
+  },
+  {
+    "id": "t-7",
+    "name": "Nurul Uyun, S.Pd",
+    "role": "Guru Kelas / Wali Kelas",
+    "category": "Guru",
+    "photoUrl": ""
+  },
+  {
+    "id": "t-8",
+    "name": "Yanto, S.Pd",
+    "role": "Guru Kelas / Wali Kelas",
+    "category": "Guru",
+    "photoUrl": ""
+  },
+  {
+    "id": "t-9",
+    "name": "Fikhiyah Rohaniyah, S.Pd",
+    "role": "Guru Kelas / Wali Kelas",
+    "category": "Guru",
+    "photoUrl": ""
+  },
+  {
+    "id": "t-10",
+    "name": "Deden Jaelani, S.Pd",
+    "role": "Guru PJOK",
+    "category": "Guru",
+    "photoUrl": ""
+  },
+  {
+    "id": "t-11",
+    "name": "Shofan Marsus, S.Pd",
+    "role": "Guru Kelas / Wali Kelas",
+    "category": "Guru",
+    "photoUrl": ""
+  },
+  {
+    "id": "t-12",
+    "name": "Fatmawati, S.Pd.I",
+    "role": "Guru PAI",
+    "category": "Guru",
+    "photoUrl": ""
+  },
+  {
+    "id": "t-13",
+    "name": "Izmayati Hermana, S.Pd",
+    "role": "Guru Kelas / Wali Kelas",
+    "category": "Guru",
+    "photoUrl": ""
+  }
+]
